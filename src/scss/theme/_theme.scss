@@ -1,0 +1,37 @@
+@use "../settings/colors";
+
+@mixin light-theme {
+  --text-color: #{colors.$dark-color};
+  --bg-color-body: #{colors.$bg-gradient-body};
+  --bg-box: #{colors.$bg-box};
+  --bg-blur1: #{colors.$bg-gradient-blur1};
+  --bg-blur2: #{colors.$bg-gradient-blur2};
+  --bg-switch: #{colors.$bg-switch};
+  --border-switch: #{colors.$bg-border-switch};
+}
+
+@mixin dark-theme {
+  --text-color: #{colors.$white-color};
+  --bg-color-body: #{colors.$bg-gradient-body-dark};
+  --bg-box: #{colors.$bg-box-dark};
+  --bg-blur1: #{colors.$bg-gradient-blur-dark1};
+  --bg-blur2: #{colors.$bg-gradient-blur-dark2};
+  --bg-switch: #{colors.$bg-switch-dark};
+  --border-switch: #{colors.$bg-border-switch-dark};
+}
+
+:root {
+  @include light-theme;
+
+  &.dark {
+    @include dark-theme;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @include dark-theme;
+
+    &.light {
+      @include light-theme;
+    }
+  }
+}

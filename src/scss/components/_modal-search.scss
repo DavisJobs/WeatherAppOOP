@@ -1,0 +1,187 @@
+@use "../tools/mixins-core";
+
+.modal-search {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color-body);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 10;
+
+  &__content-group {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 2rem;
+  }
+  &__content-close {
+    position: absolute;
+    font-size: 3.5rem;
+    color: var(--text-color);
+    left: 1rem;
+    cursor: pointer;
+  }
+  &__content-title {
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: bold;
+  }
+  &__content {
+    width: 49rem;
+    max-height: 100%;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+  }
+  &__content-container {
+    width: 100%;
+  }
+  &__content-overlay {
+    width: 85%;
+    height: 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+  }
+  &__content-search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    backdrop-filter: blur(2.3rem);
+    background: linear-gradient(
+      90deg,
+      var(--bg-blur1) 0%,
+      var(--bg-blur2) 100%
+    );
+    border-radius: 0.8rem;
+    padding: 0 1rem;
+  }
+
+  &__content-icon {
+    font-size: 2rem;
+    color: var(--text-color);
+  }
+  &__content-input {
+    width: 100%;
+    font-size: clamp(1.6rem, 3vw, 1.8rem);
+    color: var(--text-color);
+    background-color: transparent;
+    padding: 1.5rem 1rem;
+
+    &::-ms-input-placeholder {
+      color: var(--text-color);
+    }
+    &::placeholder {
+      color: var(--text-color);
+    }
+  }
+  &__content-temperature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(23px);
+    background: linear-gradient(
+      90deg,
+      var(--bg-blur1) 0%,
+      var(--bg-blur2) 100%
+    );
+    box-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.8rem;
+    padding: 1.5rem 8rem;
+    margin-top: 2rem;
+    gap: 2rem;
+    p {
+      font-size: clamp(1.8rem, 3vw, 2rem);
+    }
+    h3 {
+      font-size: clamp(1.8rem, 3vw, 2rem);
+      text-transform: uppercase;
+    }
+
+    h4 {
+      font-size: clamp(3.5rem, 6vw, 4.5rem);
+    }
+  }
+
+  &__content-info {
+    div {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+  }
+  &__content-info-item {
+    width: 15rem;
+    height: 13rem;
+    backdrop-filter: blur(23px);
+    background: linear-gradient(
+      90deg,
+      var(--bg-blur1) 0%,
+      var(--bg-blur2) 100%
+    );
+    border-radius: 0.8rem;
+    box-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    gap: 1rem;
+
+    i {
+      font-size: clamp(2rem, 3vw, 3rem);
+    }
+    h4 {
+      font-size: clamp(1.6rem, 3vw, 2rem);
+    }
+    span {
+      font-size: clamp(1.6rem, 3vw, 1.8rem);
+    }
+  }
+}
+
+@include mixins-core.responsive("tablet") {
+  .modal-search {
+    &__content-overlay {
+      width: 100%;
+      height: 70%;
+    }
+  }
+}
+
+@include mixins-core.responsive("phone") {
+  .modal-search {
+    &__content {
+      width: 100%;
+    }
+    &__content-overlay {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__content-input {
+      background-color: transparent;
+      padding: 1rem;
+    }
+  }
+}

@@ -1,0 +1,96 @@
+@use "../tools/mixins";
+
+.welcome {
+  width: 100%;
+  height: 100vh;
+
+  position: fixed;
+  z-index: 9;
+
+  &__img-overlay {
+    width: 100%;
+  }
+
+  &__container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &__content {
+    width: 65rem;
+    padding: 3rem 2rem;
+    backdrop-filter: blur(1.5rem);
+    background: linear-gradient(
+      90deg,
+      var(--bg-blur1) 0%,
+      var(--bg-blur2) 100%
+    );
+    box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  &__figure {
+    width: 65%;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+  &__content-title {
+    text-align: center;
+    color: var(--text-color);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+  }
+  &__content-description {
+    text-align: center;
+    padding-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--text-color);
+    font-size: clamp(1.8rem, 3vw, 2rem);
+  }
+  &__content-start {
+    width: 12rem;
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+    background-color: #182233;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+    font-size: clamp(1.8rem, 3vw, 2rem);
+  }
+}
+
+@include mixins.responsive("tablet") {
+  .welcome {
+    &__img-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    &__content {
+      width: 100%;
+      backdrop-filter: blur(2.5rem);
+    }
+  }
+}

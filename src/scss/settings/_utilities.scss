@@ -1,0 +1,36 @@
+.container {
+  position: relative;
+  max-width: 130rem;
+  width: 95%;
+  margin: auto;
+}
+
+.hidden {
+  transition: all 300ms ease-in !important;
+  opacity: 0 !important;
+}
+
+.open {
+  transition: 500ms ease !important;
+  display: block !important;
+  opacity: 1 !important;
+  z-index: 9 !important;
+}
+
+.error {
+  text-align: center !important;
+  font-size: clamp(1.6rem, 3vw, 2rem) !important;
+  color: #fff !important;
+  padding: 0.5rem 2rem !important;
+  background-color: rgb(58, 58, 255);
+  border-radius: 0.5rem !important;
+}
+
+.errorField {
+  text-align: center !important;
+  font-size: clamp(1.6rem, 3vw, 2rem) !important;
+  color: #fff !important;
+  padding: 0.5rem 2rem !important;
+  background-color: #ff165d;
+  border-radius: 0.5rem !important;
+}
