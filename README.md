@@ -28,7 +28,7 @@ Weather Application 7 days in advance.
 - Interactive rainfall map and text forecast for the next 24 hours.
 - Real time Weather Warnings.
 - See the latest weather forecasts for the next 7 days.
-- Busqueda de ubicion de una ciudad
+- Search for a city location.
 - Dark mode available for compatible devices.
 
 ## 📫 Screenshots
