@@ -48,7 +48,7 @@ Weather Application 7 days in advance.
   </tr>
 </table>
 
-## 🚀 Install Shoes App
+## 🚀 Install Weather App
 
 Steps for installation
 
