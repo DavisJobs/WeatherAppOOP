@@ -22,7 +22,7 @@ https://weatherjob.netlify.app/
 
 Weather Application 7 days in advance.
 
-### Features of Shoes E-commerce Website:
+### Features of Weather App
 
 - Welcome screen.
 - Interactive rainfall map and text forecast for the next 24 hours.
