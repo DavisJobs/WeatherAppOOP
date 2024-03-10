@@ -1,4 +1,4 @@
-# 🚀 Shoes App v1
+# 🚀 Weather App v1
 
 Weather project made with the "Open Weather Map API" offers you weather forecasts Know what the weather will do with the most accurate forecasts and local weather coverage 1 hour and 7 days in advance.
 
